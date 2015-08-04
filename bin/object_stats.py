@@ -39,7 +39,7 @@ def objstats(args):
     try:
         img_ds = gdal.Open(args.image, gdal.GA_ReadOnly)
     except:
-        logger.error('Could not open image: {}'.format(i=args.image))
+        logger.error('Could not open image: {}'.format(args.image))
         sys.exit(1)
 
     try:
@@ -47,7 +47,7 @@ def objstats(args):
         seg_layer = seg_ds.GetLayer()
     except:
         logger.error('Could not open segmentation vector file: {}'.format(
-            i=args.segment))
+            args.segment))
         sys.exit(1)
 
     cols, rows = img_ds.RasterXSize, img_ds.RasterYSize
