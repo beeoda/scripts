@@ -181,14 +181,15 @@ def crosstabulate(rasterized, raster, ndv=0):
 
     # Setup array headers
     rownames = np.array(['Ref-Class_' + str(u)
-                        for u in uniqs])[:, np.newaxis]
+                         for u in uniqs])[:, np.newaxis]
     colnames = ['']
     colnames.extend(['Map-Class_' + str(u) for u in uniqs])
 
     pretty_tab = np.hstack((rownames, np.char.mod('%i', tab)))
     pretty_tab = np.vstack((colnames, pretty_tab))
 
-    return pretty_tab
+    # Return with reference labels across & map labels down
+    return pretty_tab.T
 
 
 def main():
