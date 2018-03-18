@@ -7,7 +7,6 @@ from qgis.core import *
 from qgis.utils import iface
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
-from __future__ import print_function, division
 import logging
 import os
 import sys
